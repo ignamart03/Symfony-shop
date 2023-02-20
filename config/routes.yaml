@@ -4,3 +4,17 @@ controllers:
 app_logout:
     path: /logout
     methods: GET
+    
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+
+login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+    
+register:
+    path: /register
+    controller: App\Controller\RegistrationController::register
+
+    
