@@ -18,3 +18,16 @@ register:
     controller: App\Controller\RegistrationController::register
 
     
+app_first:
+    path: /
+    controller: App\Controller\HomeController::index
+
+
+logout:
+    path: /logout
+    controller: App\Controller\SecurityController::logout
+    
+    
+restaurant:
+    path: /restaurant/1
+    controller: App\Controller\SecurityController::restaurant
