@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+
             <file>file:/C:/symfony-projects/Symfony-shop/config/routes.yaml</file>
             <file>file:/C:/symfony-projects/Symfony-shop/src/Controller/SecurityController.php</file>
             <file>file:/C:/symfony-projects/Symfony-shop/templates/home/index.html.twig</file>
@@ -10,6 +11,17 @@
             <file>file:/C:/symfony-projects/Symfony-shop/templates/base.html.twig</file>
             <file>file:/C:/symfony-projects/Symfony-shop/templates/restaurant/index.html.twig</file>
             <file>file:/C:/symfony-projects/Symfony-shop/templates/registration/register.html.twig</file>
+
+            <file>file:/C:/symfony-projects/shop/src/Controller/SecurityController.php</file>
+            <file>file:/C:/symfony-projects/shop/templates/base.html.twig</file>
+            <file>file:/C:/symfony-projects/shop/templates/login/index.html.twig</file>
+            <file>file:/C:/symfony-projects/shop/templates/restaurant/index.html.twig</file>
+            <file>file:/C:/symfony-projects/shop/templates/registration/register.html.twig</file>
+            <file>file:/C:/symfony-projects/shop/config/packages/security.yaml</file>
+            <file>file:/C:/symfony-projects/shop/templates/home/index.html.twig</file>
+            <file>file:/C:/symfony-projects/shop/config/routes.yaml</file>
+            <file>file:/C:/symfony-projects/shop/templates/security/index.html.twig</file>
+
         </group>
     </open-files>
 </project-private>
