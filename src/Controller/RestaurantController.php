@@ -3,28 +3,30 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Restaurant;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\Restaurant;
 
-class RestaurantController extends AbstractController {
+class RestaurantController extends AbstractController
+{
+    #[Route('/restaurant', name: 'app_restaurant')]
+    public function createRestaurant(ManagerRegistry $doctrine): Response
+    {
+        $entityManager = $doctrine->getManager();
 
-    #[Route('/restaurant/{codres}', name: 'restaurant_show')]
-    public function show(ManagerRegistry $doctrine, int $codres): Response {
-        $restaurant = $doctrine->getRepository(Restaurant::class)->find($codres);
+        $restaurant = new Restaurant();
+        $restaurant->setName('El Horcher de La Guindalera');
+        $restaurant->setEmail('horcherguindalera@gmail.com');
+        $restaurant->setAddress('Padre Claret,6');
+        $restaurant->setCity('Madrid');
 
-        if (!$restaurant) {
-            throw $this->createNotFoundException(
-                            'No product found for code ' . $codres
-            );
-        }
+        // tell Doctrine you want to (eventually) save the Product (no queries yet)
+        $entityManager->persist($restaurant);
 
-        return new Response('Check out this great restaurant: ' . $restaurant->getEmail());
+        // actually executes the queries (i.e. the INSERT query)
+        $entityManager->flush();
 
-        // or render a template
-        // in the template, print things with {{ product.name }}
-        // return $this->render('restaurant/show.html.twig', ['product' => $product]);
+        return new Response('Saved new product with id '.$restaurant->getId());
     }
-
 }
