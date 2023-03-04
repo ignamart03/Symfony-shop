@@ -1,28 +1,24 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User List{% endblock %}
-
 {% block body %}
-
-<div class="container mt-5">
-  <h1>User List</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for user in shop %}
-        <tr>
-          <td>{{ user.id }}</td>
-          <td>{{ user.email }}</td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-</div>
-
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dish in dishes %}
+                <tr>
+                    <td>{{ dish.id }}</td>
+                    <td>{{ dish.name }}</td>
+                    <td>{{ dish.description }}</td>
+                    <td>{{ dish.price }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

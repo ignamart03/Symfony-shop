@@ -36,3 +36,7 @@ restaurant:
 table:
     path: /table
     controller: App\Controller\TableController::table
+    
+profile:
+    path: /profile
+    controller: App\Controller\ProfileController::index

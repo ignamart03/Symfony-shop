@@ -2,38 +2,28 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Dish;
+use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\Persistence\ManagerRegistry;
 
 class TableController extends AbstractController {
 
+    private $doctrine;
+
+    public function __construct(ManagerRegistry $doctrine) {
+        $this->doctrine = $doctrine;
+    }
+
     #[Route('/table', name: 'app_table')]
     public function index(): Response {
+        $dishes = $this->doctrine->getRepository(Dish::class)->findAll();
         return $this->render('table/index.html.twig', [
-                    'controller_name' => 'TableController',
+                    'dishes' => $dishes,
         ]);
     }
 
-    public function userList(UserRepository $userRepository) {
-        $users = $userRepository->findAll();
-        return $this->render('user/list.html.twig', [
-                    'users' => $users
-        ]);
-    }
-
-    public function showAction($userId) {
-        $product = $this->getDoctrine()
-                ->getRepository(Product::class)
-                ->find($userId);
-
-        if (!$product) {
-            throw $this->createNotFoundException(
-                            'No product found for id ' . $userId
-            );
-        }
-
-        // ... do something, like pass the $product object into a template
-    }
-
+    //...
 }
