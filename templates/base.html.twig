@@ -45,18 +45,23 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('register') }}">Register</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('login') }}">Login</a>
-                    </li>
                     {% if app.user %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('profile') }}">Profile</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ path('logout') }}">Logout</a>
                         </li>
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('login') }}">Login</a>
+                        </li>
                     {% endif %}
-
-
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('restaurant') }}">Restaurant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('table') }}">Dishes</a>
                     </li>
                 </ul>
             </div>

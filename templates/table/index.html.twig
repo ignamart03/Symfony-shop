@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dish in dishes %}
+                <tr>
+                    <td>{{ dish.id }}</td>
+                    <td>{{ dish.name }}</td>
+                    <td>{{ dish.description }}</td>
+                    <td>{{ dish.price }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

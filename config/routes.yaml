@@ -29,5 +29,14 @@ logout:
     
     
 restaurant:
-    path: /restaurant/1
+    path: /restaurant
     controller: App\Controller\SecurityController::restaurant
+    
+    
+table:
+    path: /table
+    controller: App\Controller\TableController::table
+    
+profile:
+    path: /profile
+    controller: App\Controller\ProfileController::index
